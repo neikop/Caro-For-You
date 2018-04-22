@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w index.js --exec \"babel-node index.js --presets env\""
+    "dev": "nodemon -w index.js --exec \"babel-node index.js --presets env\"",
+    "prestart": "npm install",
+    "start": "node index.js"
   },
   "author": "Neikop",
   "license": "ISC",
