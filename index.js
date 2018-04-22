@@ -15,7 +15,7 @@ server.listen(port, () => {
     console.log('Server is running on: ' + port);
 });
 
-let users = new Set();
+let users = [];
 let names = {};
 let status = {};
 
@@ -41,8 +41,8 @@ io.on('connection', (socket) => {
 
     socket.on('login', (player) => {
         socket.username = player.username;
-
-        users.add(socket.id);
+        
+        users.push(socket.id);
         names[socket.id] = player.username;
         status[socket.id] = false;
         io.emit('update-user', { users, names, status });
@@ -52,7 +52,9 @@ io.on('connection', (socket) => {
     });
 
     socket.on('disconnect', () => {
-        users.delete(socket.id);
+        const index = users.indexOf(socket.id);
+        users.splice(index, 1);
+        
         delete names[socket.id];
         delete status[socket.id];
         io.emit('update-user', { users, names, status });
