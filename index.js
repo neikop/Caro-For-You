@@ -2,7 +2,6 @@ const express = require('express');
 const http = require('http');
 const path = require('path');
 const socket = require('socket.io');
-const util = require('util');
 
 
 let app = express();
@@ -11,7 +10,7 @@ let io = socket(server);
 
 app.use(express.static(path.join(__dirname, 'build')));
 
-const port = 1858;
+const port = process.env.PORT || 1858;
 server.listen(port, () => {
     console.log('Server is running on: ' + port);
 });
