@@ -8,7 +8,7 @@ let app = express();
 let server = http.createServer(app);
 let io = socket(server);
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use('/', express.static(path.join(__dirname, 'build')));
 
 const port = process.env.PORT || 1858;
 server.listen(port, () => {
