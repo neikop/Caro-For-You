@@ -1,12 +1,12 @@
 {
-  "name": "server",
+  "name": "care-for-you",
   "version": "1.0.0",
-  "description": "",
+  "description": "This is Caro game for Ai-chan <3",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon -w index.js --exec \"babel-node index.js --presets env\"",
+    "dev": "nodemon -w source --exec \"babel-node source --presets env\"",
     "prestart": "npm install",
-    "start": "node index.js"
+    "start": "node source"
   },
   "author": "Neikop",
   "license": "ISC",

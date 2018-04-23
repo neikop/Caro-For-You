@@ -3,12 +3,11 @@ const http = require('http');
 const path = require('path');
 const socket = require('socket.io');
 
-
 let app = express();
 let server = http.createServer(app);
 let io = socket(server);
 
-app.use('/', express.static(path.join(__dirname, 'build')));
+app.use('/', express.static(path.join(__dirname, 'public')));
 
 const port = process.env.PORT || 1858;
 server.listen(port, () => {
@@ -41,7 +40,7 @@ io.on('connection', (socket) => {
 
     socket.on('login', (player) => {
         socket.username = player.username;
-        
+
         users.push(socket.id);
         names[socket.id] = player.username;
         status[socket.id] = false;
@@ -53,8 +52,7 @@ io.on('connection', (socket) => {
 
     socket.on('disconnect', () => {
         const index = users.indexOf(socket.id);
-        users.splice(index, 1);
-        
+        if (index >= 0) users.splice(index, 1);
         delete names[socket.id];
         delete status[socket.id];
         io.emit('update-user', { users, names, status });
