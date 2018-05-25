@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: antiquewhite;
+    margin: 0;
+}
+
+ol, ul {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    font: 14px sans-serif;
+}
+
+.board-row:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.square {
+    background: white;
+    border: 1px solid grey;
+    float: left;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: -1px;
+    margin-top: -1px;
+    padding: 0;
+}
+
+.square:focus {
+    outline: none;
+}
+
+.kbd-navigation .square:focus {
+    background: white;
+}
+
+/* LOGIN */
+
+.invisible {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+.login-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.login-page .form {
+    text-align: center;
+    width: 100%;
+    margin-top: 20%;
+}
+
+.login-page .form .title {
+    color: blueviolet;
+    font-family: monospace;
+    font-size: 180%;
+    font-weight: bold;
+}
+
+.login-page .form .user-input {
+    color: darkviolet;
+    font-size: 200%;
+    font-weight: bold;
+    width: 300px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+/* GAME */
+
+.game-page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.game {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.game-board {
+    margin-left: 20px;
+}
+
+.game-info {
+    margin-left: 20px;
+    width: 140px;
+    min-width: 140px;
+    display: flex;
+    flex-direction: column;
+}
+
+.history {
+    margin-bottom: 20px;
+}
+
+.button-undo {
+    height: 24px;
+    width: 100%;
+    font-weight: 600;
+}
+
+.status {
+    margin-bottom: 20px;
+    font-size: 140%;
+    font-weight: 600;
+}
+
+/* PREPARE */
+
+.player-list {
+    margin-bottom: 20px;
+}
+
+.player-line {
+    margin-left: 10px;
+    max-width: 120px;
+    font-size: 130%;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.button-line {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.button-ready {
+    margin-right: 20px;
+    height: 24px;
+    width: 70px;
+    font-weight: 600;
+}
+
+.button-start {
+    position: absolute;
+    right: 0;
+    height: 24px;
+    width: 60px;
+    font-weight: 600;
+}
+
+/* CHAT */
+
+.chat-board {
+    position: relative;
+    background: white;
+    border: 1px solid grey;
+    margin-left: 20px;
+    width: 300px;
+    min-width: 300px;
+}
+
+.messages {
+    height: 100%;
+    padding: 10px;
+    padding-bottom: 50px;
+    overflow-y: auto;
+}
+
+.message-line {
+    font-size: 120%;
+    word-wrap: break-word;
+}
+
+.message-input {
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    bottom: 0;
+    font-size: 140%;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline: none;
+    border: none;
+    border-top: 2px solid darkorange;
+    border-bottom: 2px solid darkorange;
+    margin-bottom: -1px;
+}
+
+.space {
+    min-width: 20px;
+}
+
+/* OTHERS */
+
+.bold {
+    font-weight: bold;
+}
+
+.violet {
+    color: darkviolet;
+}
+
+.green {
+    color: green;
+}
+
+.new-red {
+    color: red;
+}
+
+.old-red {
+    color: darkred;
+}
+
+@keyframes glowing-red {
+    0% {color: red;}
+    50% {color: white;}
+    100% {color: red;}
+}
+
+.glow-red {
+    animation: glowing-red 500ms infinite;
+}
+
+.new-blue {
+    color: blue;
+}
+
+.old-blue {
+    color: darkblue;
+}
+
+@keyframes glowing-blue {
+    0% {color: blue;}
+    50% {color: white;}
+    100% {color: blue;}
+}
+
+.glow-blue {
+    animation: glowing-blue 500ms infinite;
+}
+
+@keyframes glowing-violet {
+    0% {color: darkviolet;}
+    50% {color: darkorange;}
+    100% {color: darkviolet;}
+}
+
+.glow-violet {
+    animation: glowing-violet 500ms infinite;
+}
